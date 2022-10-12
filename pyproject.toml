@@ -10,6 +10,10 @@ httpx = "^0.23.0"
 Authlib = "^1.1.0"
 sanic = "^22.9.0"
 httpx-oauth = "^0.10.1"
+sanic-ext = "^22.9.0"
+Jinja2 = "^3.1.2"
+itsdangerous = "^2.1.2"
+nanoid = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 ipython = "^8.5.0"

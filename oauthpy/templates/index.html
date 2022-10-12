@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>My Webpage</title>
+    </head>
+
+    <body>
+        <ul>
+            {% if data.authenticated %}
+          <li>{{ data.user }} welcome</li>
+
+
+          Check <a href="/secure">secure</a>
+            <br/>
+          <a href="/logout">Logout</a>
+
+          {% else %}
+          you are not logged
+          <a href="/login/google">Login</button>
+          {%endif %}
+        </ul>
+    <script>
+
+    fetch('/secure')
+       .then((response) => response.json())
+       .then((data) => console.log(data));
+
+    </script>
+    </body>
+
+
+</html>
+
+ 
+
+ 
