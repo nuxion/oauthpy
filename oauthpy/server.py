@@ -10,6 +10,7 @@ token = None
 
 @app.get("/")
 async def hello_world(request):
+    breakpoint()
     u = request.args.get("user")
     return text("Hello, world.")
 
