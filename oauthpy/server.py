@@ -3,17 +3,17 @@ from dataclasses import dataclass
 
 from httpx_oauth.clients.google import GoogleOAuth2
 from sanic import Sanic
-from sanic.response import redirect, text, json
+from sanic.response import json, redirect, text
 
 from oauthpy import defaults
 from oauthpy.utils import cookie_protected, sessionid_factory
 
 REDIRECT_URL = "http://localhost:8000/auth/google"
 app = Sanic("MyHelloWorldApp")
-app.extend(config={
-    "templating_path_to_templates": f"{os.getcwd()}/oauthpy/templates"
-}
-)
+# app.extend(config={
+#    "templating_path_to_templates": f"{os.getcwd()}/oauthpy/templates"
+# }
+# )
 
 
 google = GoogleOAuth2(
@@ -42,7 +42,6 @@ async def logout_route(request):
     del rsp.cookies["user-test"]
     del rsp.cookies[defaults.COOKIE_SESSION_KEY]
     return rsp
-
 
 
 @app.get("/secure")
